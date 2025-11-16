@@ -22,4 +22,10 @@ std::size_t operator()(const std::string& s) const noexcept {
 }
 
 Q2. Note that we are saving pointers to names in the queue, not names themselves. Why might this be desired in this problem? What happens if the original set where the names are stored goes out of scope and the pointers are referenced?
-A2. TODO
+A2.
+Storing the pointers brings many benefits:
+ - Avoid copying, increasing the performance.
+ - Keeps a single canonycal version of the data
+ - Reordering doesn't affect the original data
+Using const ptrs enforce read only behavior
+ If it goes out of scope, the destructor can clean the memory that those pointers are pointing to. But deleting from the set doesn't delete the string from the list
