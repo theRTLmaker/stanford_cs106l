@@ -1,0 +1,18 @@
+Before submitting this file, make sure that there are no more TODO
+placeholders remaining in the file (and remove this comment too).
+
+Make a Class
+------------
+
+Q1. What’s const-correctness and why is it important?
+A1. Const correctness is about marking objects, references, pointers, and members functions as const
+when they do not modify observable state. It provides three jobs:
+ - documents the intent
+ - enforces safety at compile time (compiler checks accidental writes)
+ - enables use in more context (allows calls on const objects)
+ - helps with optimization
+
+Q2. Is your class const-correct? How do you know?
+A2. It is const-correct if every inspector is declared with a trailing const, and only mutators are
+non-const.
+The quick check: create a const instance and ensure all read-only functions compile and run.
