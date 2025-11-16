@@ -1,0 +1,25 @@
+Before submitting this file, make sure that there are no more TODO
+placeholders remaining in the file (and remove this comment too).
+
+Marriage Pact
+-------------
+
+Q1. It is your choice to use either an ordered or unordered set. In a few sentences, what are some of the tradeoffs between the two? Additionally, please give an example (that has not been shown in lecture) of a valid hash function that could be used to hash student names for an unordered set.
+A1.
+
+They are used for different use cases:
+std::set (ordered, tree-based): lookup/insert/erase are O(log N). Iteration is sorted. Iterators are stable on insert; erase invalidates only the erased iterator. Memory cost is one node per element plus tree pointers.
+std::unordered_set (hash-based): lookup/insert/erase are average O(1) and worst-case O(N) under heavy collisions. Iteration is O(N) in bucket order, not sorted. Rehashing happens when load factor exceeds max_load_factor (not because of collisions by itself). Rehash invalidates all iterators; insert does not invalidate iterators unless it triggers a rehash; erase invalidates only iterators to erased elements. Memory cost includes a bucket array plus nodes, which can exceed std::set for small N.
+
+std::size_t operator()(const std::string& s) const noexcept {
+    std::uint64_t h = 146923432534665603ull;
+
+    for (unsigned char c : s) {
+        h ^= c;
+        h *= 100234782347;
+    }
+    return static_cast<std::size_t>(h);
+}
+
+Q2. Note that we are saving pointers to names in the queue, not names themselves. Why might this be desired in this problem? What happens if the original set where the names are stored goes out of scope and the pointers are referenced?
+A2. TODO

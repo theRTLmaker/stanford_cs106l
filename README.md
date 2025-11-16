@@ -18,13 +18,13 @@ https://github.com/cs106l/cs106l-assignments/tree/main
 .
 ├── assignments # documents and starter codes of programming assigments & implementation
 │   ├── 2025_fall
-│       ├── assignment0
-│       ├── assignment1
-│       ├── assignment2
-│       ├── assignment3
-│       ├── assignment4
-│       ├── assignment5
-│       └── ...
+│   │   ├── assignment0
+│   │   ├── assignment1
+│   │   ├── assignment2
+│   │   ├── assignment3
+│   │   ├── assignment4
+│   │   ├── assignment5
+│   │   └── ...
 │   └── previous_years
 │       ├── GapBuffer
 │       ├── HashMap
